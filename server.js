@@ -3,16 +3,12 @@ var http = require('http');
 
 var app = express();
 
-app.use(express.static);
-
-app.static(__dirname + '/public');
-
-
-app.get('/', function(req, res) {
-	res.send('Hello World');
-});
+app.use(express.static(__dirname + '/public'));
 
 var server = http.createServer(app);
-server.listen(3000, function() {
-	console.log('the server is running!');
+
+app.set('port', process.env.PORT || 3000);
+
+server.listen(app.get('port'), function() {
+	console.log('the server is running on port', app.get('port'));
 });
