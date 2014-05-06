@@ -1,0 +1,9 @@
+{
+	"name" : "hello-express",
+	"description" : "This is our hello world for express",
+	"version" : "0.0.1",
+	"dependencies" : {
+		"express" : "^4.0"
+	}
+
+}
